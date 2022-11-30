@@ -51,8 +51,10 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
 });
 
 app.use(
-    cors(), express.json(), router
+    cors(), express.json()
 );
+
+app.use("/api", router);
 
 app.use(
     "/docs", swaggerUi.serve, swaggerUi.setup(swaggerFile)
