@@ -9,12 +9,17 @@ import socketio, { Socket, Server } from "socket.io";
 import swaggerFile from "./swagger/swagger.json";
 import router from "./routes/route";
 
+import connectDB from "./configs/connection";
+
 const app: Application = express();
 const io = new Server({});
 
 const connectedUsers: any = {};
 
 dotenv.config();
+
+// Database - MongoDB
+connectDB();
 
 // SocketIO
 io.on("connection", (socket: Socket) => {
