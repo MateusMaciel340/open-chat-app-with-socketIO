@@ -1,1 +1,0 @@
-# Authentication Authorization Bearer JWT
